@@ -1,3 +1,9 @@
+#### 0.1.3 (2019-08-19)
+
+##### Refactors
+
+*  Refactor code to work with regardless if dir option ends in '/' ([788b8e60](https://github.com/wchen02/apify-etl-lib/commit/788b8e6006e42cf6fd092a6aacc30bcf93763f7f))
+
 #### 0.1.2 (2019-08-19)
 
 ##### Other Changes

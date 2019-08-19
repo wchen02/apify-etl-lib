@@ -79,7 +79,7 @@ module.exports = function() {
         makeDir(rawDataDir);
     
         const getDatasetEndpoint = options.GET_DATASET_ENDPOINT;
-        const dataFilename = rawDataDir + options.DATA_FILE;
+        const dataFilename = rawDataDir + '/' + options.DATA_FILE;
         await downloadDataset(getDatasetEndpoint, dataFilename);
     }
     

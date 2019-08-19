@@ -1,3 +1,13 @@
+#### 0.1.2 (2019-08-19)
+
+##### Other Changes
+
+*  update packages ([0d8835cf](https://github.com/wchen02/apify-etl-lib/commit/0d8835cfd4dfdcd4a27adc0930f2f6ff2036984a))
+
+##### Refactors
+
+*  Renaming method for readability ([1a11f16b](https://github.com/wchen02/apify-etl-lib/commit/1a11f16bd80682b2c79ad05f70278cb974ba1901))
+
 #### 0.1.1 (2019-08-19)
 
 ##### Bug Fixes

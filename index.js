@@ -37,7 +37,7 @@ module.exports = function() {
         return filename;
     }
     
-    function makeDataDir(dir) {
+    function makeDir(dir) {
         log.info(`Making directory ${ dir }`);
         try {
             mkdirp.sync(dir);
@@ -76,7 +76,7 @@ module.exports = function() {
     
     async function getDataset(options) {
         const rawDataDir = options.RAW_DATA_DIR;
-        makeDataDir(rawDataDir);
+        makeDir(rawDataDir);
     
         const getDatasetEndpoint = options.GET_DATASET_ENDPOINT;
         const dataFilename = rawDataDir + options.DATA_FILE;
@@ -109,10 +109,10 @@ module.exports = function() {
         const archivedRawDataDir = datedArchivedDir + '/raw';
         const archivedNormalizedDataDir = datedArchivedDir + '/normalized';        
 
-        makeDataDir(datedArchivedDir);
-        makeDataDir(archivedDownloadDir);
-        makeDataDir(archivedRawDataDir);
-        makeDataDir(archivedNormalizedDataDir);
+        makeDir(datedArchivedDir);
+        makeDir(archivedDownloadDir);
+        makeDir(archivedRawDataDir);
+        makeDir(archivedNormalizedDataDir);
 
         renameDir(downloadDir, archivedDownloadDir)
         renameDir(rawDataDir, archivedRawDataDir);

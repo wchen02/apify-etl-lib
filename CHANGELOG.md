@@ -1,3 +1,9 @@
+#### 0.1.1 (2019-08-19)
+
+##### Bug Fixes
+
+*  Fix wrong package dependencies ([d18bc4cd](https://github.com/wchen02/apify-etl-lib/commit/d18bc4cdee4575285ead0f0ff5e519c6b2504bb5))
+
 ### 0.1.0 (2019-08-19)
 
 ##### New Features

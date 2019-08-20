@@ -1,3 +1,9 @@
+#### 0.1.4 (2019-08-20)
+
+##### Chores
+
+*  Update dependent package ([4f2edb89](https://github.com/wchen02/apify-etl-lib/commit/4f2edb89920eeeebb0ab57bd2046eb5c23d95ede))
+
 #### 0.1.3 (2019-08-19)
 
 ##### Refactors

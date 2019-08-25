@@ -1,3 +1,9 @@
+#### 0.1.5 (2019-08-25)
+
+##### Chores
+
+*  Update dependencies ([c3d40ea2](https://github.com/wchen02/apify-etl-lib/commit/c3d40ea2984c252e97fc4248eb6b41e9c8f2ed48))
+
 #### 0.1.4 (2019-08-20)
 
 ##### Chores

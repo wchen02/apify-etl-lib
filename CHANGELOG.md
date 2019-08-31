@@ -1,3 +1,9 @@
+### 0.3.0 (2019-08-31)
+
+##### New Features
+
+*  added option to skip archiving download ([eb4868c7](https://github.com/wchen02/apify-etl-lib/commit/eb4868c74eabb63b234a73a95dd4558c59f05dd4))
+
 ### 0.2.0 (2019-08-31)
 
 ##### New Features

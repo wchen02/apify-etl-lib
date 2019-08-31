@@ -1,3 +1,9 @@
+#### 0.3.3 (2019-08-31)
+
+##### Chores
+
+*  Update packages ([48d97714](https://github.com/wchen02/apify-etl-lib/commit/48d97714a3b52ea1c2e5b8f4536072a5ea3676a1))
+
 #### 0.3.2 (2019-08-31)
 
 ##### Bug Fixes

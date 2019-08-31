@@ -1,3 +1,9 @@
+### 0.2.0 (2019-08-31)
+
+##### New Features
+
+*  Aded support to archive to user specified directory ([9c8fc0b4](https://github.com/wchen02/apify-etl-lib/commit/9c8fc0b420fba9b7c93d9d9b13596b91d05f60e4))
+
 #### 0.1.5 (2019-08-25)
 
 ##### Chores

@@ -1,3 +1,9 @@
+#### 0.3.2 (2019-08-31)
+
+##### Bug Fixes
+
+*  Unable to invoke func because func it's not async ([19e867d0](https://github.com/wchen02/apify-etl-lib/commit/19e867d07e3c9fb31d4fba5eb45259c7d05c9198))
+
 #### 0.3.1 (2019-08-31)
 
 ##### Refactors

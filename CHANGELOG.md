@@ -1,3 +1,9 @@
+#### 0.4.1 (2019-08-31)
+
+##### Refactors
+
+*  Reorganize code + add longging ([d9de5d5e](https://github.com/wchen02/apify-etl-lib/commit/d9de5d5edd5d8b8148dee6827cbd8d85648a5705))
+
 ### 0.4.0 (2019-08-31)
 
 ##### New Features

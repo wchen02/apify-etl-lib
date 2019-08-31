@@ -47,12 +47,18 @@ module.exports = function() {
         }
     }
 
-    function renameDir(src, dest) {
-        log.info(`Renaming directory ${ src } to ${ dest }`);
+    function moveFilesToDir(src, dest) {
+        log.info(`Moving files from ${ src } to ${ dest }`);
+        const readdirAsync = promisify(fs.readdir)
+        const renameAsync = promisify(fs.rename)
+
         try {
-            fs.renameSync(src, dest);
+            const files = await readdirAsync(src);
+            await Promise.all(files.map(filename => {
+                renameAsync(src + '/' + filename, dest);
+            }));
         } catch(err) {
-            log.error(`Error renaming directory ${ src } to ${ dest }`);
+            log.error(`Error moving files from ${ src } to ${ dest }`);
             log.error(err);
         }
     }
@@ -105,18 +111,18 @@ module.exports = function() {
         const day = format(date, 'DD');
 
         const datedArchivedDir = archivedDir + '/' + year + '/' + month + '/' + day;
-        const archivedDownloadDir = datedArchivedDir + '/download';
-        const archivedRawDataDir = datedArchivedDir + '/raw';
-        const archivedNormalizedDataDir = datedArchivedDir + '/normalized';        
+        const archivedDownloadDir = options.ARCHIVED_DOWNLOAD_DIR || datedArchivedDir + '/download';
+        const archivedRawDataDir = options.ARCHIVED_RAW_DATA_DIR || datedArchivedDir + '/raw';
+        const archivedNormalizedDataDir = options.ARCHIVED_NORMALIZED_DATA_DIR || datedArchivedDir + '/normalized';
 
         makeDir(datedArchivedDir);
         makeDir(archivedDownloadDir);
         makeDir(archivedRawDataDir);
         makeDir(archivedNormalizedDataDir);
 
-        renameDir(downloadDir, archivedDownloadDir)
-        renameDir(rawDataDir, archivedRawDataDir);
-        renameDir(normalizedDataDir, archivedNormalizedDataDir);
+        moveFilesToDir(downloadDir, archivedDownloadDir)
+        moveFilesToDir(rawDataDir, archivedRawDataDir);
+        moveFilesToDir(normalizedDataDir, archivedNormalizedDataDir);
     }
     
     async function scrape(options, config) {

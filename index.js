@@ -111,18 +111,21 @@ module.exports = function() {
         const day = format(date, 'DD');
 
         const datedArchivedDir = archivedDir + '/' + year + '/' + month + '/' + day;
-        const archivedDownloadDir = options.ARCHIVED_DOWNLOAD_DIR || datedArchivedDir + '/download';
         const archivedRawDataDir = options.ARCHIVED_RAW_DATA_DIR || datedArchivedDir + '/raw';
         const archivedNormalizedDataDir = options.ARCHIVED_NORMALIZED_DATA_DIR || datedArchivedDir + '/normalized';
 
         makeDir(datedArchivedDir);
-        makeDir(archivedDownloadDir);
         makeDir(archivedRawDataDir);
         makeDir(archivedNormalizedDataDir);
 
-        moveFilesToDir(downloadDir, archivedDownloadDir)
         moveFilesToDir(rawDataDir, archivedRawDataDir);
         moveFilesToDir(normalizedDataDir, archivedNormalizedDataDir);
+
+        if (!options.SKIP_DOWNLOAD_ARCHIVE) {
+            const archivedDownloadDir = options.ARCHIVED_DOWNLOAD_DIR || datedArchivedDir + '/download';
+            makeDir(archivedDownloadDir);
+            moveFilesToDir(downloadDir, archivedDownloadDir);
+        }
     }
     
     async function scrape(options, config) {

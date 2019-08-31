@@ -121,7 +121,7 @@ module.exports = function() {
         moveFilesToDir(rawDataDir, archivedRawDataDir);
         moveFilesToDir(normalizedDataDir, archivedNormalizedDataDir);
 
-        if (!options.SKIP_DOWNLOAD_ARCHIVE) {
+        if (!options.SKIP_ARCHIVE_DOWNLOAD) {
             const archivedDownloadDir = options.ARCHIVED_DOWNLOAD_DIR || datedArchivedDir + '/download';
             makeDir(archivedDownloadDir);
             moveFilesToDir(downloadDir, archivedDownloadDir);

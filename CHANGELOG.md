@@ -1,3 +1,9 @@
+#### 0.4.2 (2019-08-31)
+
+##### Other Changes
+
+*  specify dependencies version ([7b00ec80](https://github.com/wchen02/apify-etl-lib/commit/7b00ec80b6a54bcffcb3dedb005a43f7ebb1feb4))
+
 #### 0.4.1 (2019-08-31)
 
 ##### Refactors

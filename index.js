@@ -55,7 +55,7 @@ module.exports = function() {
         try {
             const files = await readdirAsync(src);
             await Promise.all(files.map(filename => {
-                renameAsync(src + '/' + filename, dest);
+                renameAsync(src + '/' + filename, dest + '/' + filename);
             }));
         } catch(err) {
             log.error(`Error moving files from ${ src } to ${ dest }`);

@@ -1,3 +1,9 @@
+#### 0.3.4 (2019-08-31)
+
+##### Bug Fixes
+
+*  Fix moving file failure bug ([44e11d5f](https://github.com/wchen02/apify-etl-lib/commit/44e11d5fe48375aa5b74fdde8d27621ddc8ef909))
+
 #### 0.3.3 (2019-08-31)
 
 ##### Chores

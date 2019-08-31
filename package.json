@@ -31,10 +31,10 @@
     "axios": "^0.19.0",
     "date-fns": "^1.30.1",
     "download": "^7.1.0",
-    "loader": "github:wchen02/loader",
+    "loader": "github:wchen02/loader#v1.3.4",
     "loglevel": "^1.6.3",
     "mkdirp": "^0.5.1",
-    "normalizer": "github:wchen02/normalizer",
+    "normalizer": "github:wchen02/normalizer#v1.5.6",
     "recursive-copy": "^2.0.10"
   },
   "devDependencies": {

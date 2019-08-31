@@ -5,6 +5,8 @@ const { promisify } = require('util');
 const log = require('loglevel');
 const normalizer = require('normalizer');
 const loader = require('loader');
+const copy = require('recursive-copy');
+
 const { 
     format, 
     startOfToday, 
@@ -126,7 +128,12 @@ module.exports = function() {
         if (!options.SKIP_ARCHIVE_DOWNLOAD) {
             const archivedDownloadDir = options.ARCHIVED_DOWNLOAD_DIR || datedArchivedDir + '/download';
             makeDir(archivedDownloadDir);
-            await moveFilesToDir(downloadDir, archivedDownloadDir);
+            const copyAsync = promisify(copy);
+            try {
+                await copyAsync(downloadDir, archivedDownloadDir)
+            } catch (err) {
+                console.error('Copy failed: ' + err);
+            }
         }
     }
     

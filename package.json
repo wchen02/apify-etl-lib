@@ -34,7 +34,8 @@
     "loader": "github:wchen02/loader",
     "loglevel": "^1.6.3",
     "mkdirp": "^0.5.1",
-    "normalizer": "github:wchen02/normalizer"
+    "normalizer": "github:wchen02/normalizer",
+    "recursive-copy": "^2.0.10"
   },
   "devDependencies": {
     "generate-changelog": "^1.8.0"

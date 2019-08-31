@@ -47,7 +47,7 @@ module.exports = function() {
         }
     }
 
-    function moveFilesToDir(src, dest) {
+    async function moveFilesToDir(src, dest) {
         log.info(`Moving files from ${ src } to ${ dest }`);
         const readdirAsync = promisify(fs.readdir)
         const renameAsync = promisify(fs.rename)
@@ -118,13 +118,15 @@ module.exports = function() {
         makeDir(archivedRawDataDir);
         makeDir(archivedNormalizedDataDir);
 
-        moveFilesToDir(rawDataDir, archivedRawDataDir);
-        moveFilesToDir(normalizedDataDir, archivedNormalizedDataDir);
+        await Promise.all([
+            moveFilesToDir(rawDataDir, archivedRawDataDir),
+            moveFilesToDir(normalizedDataDir, archivedNormalizedDataDir),
+        ]);
 
         if (!options.SKIP_ARCHIVE_DOWNLOAD) {
             const archivedDownloadDir = options.ARCHIVED_DOWNLOAD_DIR || datedArchivedDir + '/download';
             makeDir(archivedDownloadDir);
-            moveFilesToDir(downloadDir, archivedDownloadDir);
+            await moveFilesToDir(downloadDir, archivedDownloadDir);
         }
     }
     

@@ -1,3 +1,9 @@
+#### 0.3.1 (2019-08-31)
+
+##### Refactors
+
+*  Rename option SKIP_DOWNLOAD_ARCHIVE to SKIP_ARCHIVE_DOWNLOAD ([3a1edbd6](https://github.com/wchen02/apify-etl-lib/commit/3a1edbd62b83edc5b9d1a34255537697ea63bb10))
+
 ### 0.3.0 (2019-08-31)
 
 ##### New Features

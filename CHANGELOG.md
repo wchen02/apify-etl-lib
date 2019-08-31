@@ -1,3 +1,9 @@
+### 0.4.0 (2019-08-31)
+
+##### New Features
+
+*  Recursively copy all files from src download to archived download dir ([205d8e5a](https://github.com/wchen02/apify-etl-lib/commit/205d8e5adc3ef3f5017d2465404276aace098ed2))
+
 #### 0.3.4 (2019-08-31)
 
 ##### Bug Fixes

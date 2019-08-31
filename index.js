@@ -64,7 +64,19 @@ module.exports = function() {
             log.error(err);
         }
     }
-    
+
+    async function recursiveCopy(src, dest) {
+        log.info(`Recursively copying files from ${ src } to ${ dest }`);
+        const copyAsync = promisify(copy);
+        
+        try {
+            await copyAsync(downloadDir, archivedDownloadDir)
+        } catch (err) {
+            log.error(`Error recursively copying files from ${ src } to ${ dest }`);
+            log.error(err);
+        }
+    }
+
     function getDailyOptions(data, requestsPerDay, requestDepthsPerDay) {
         data.startDate = format(startOfToday(), 'MM/DD/YYYY');
         data.endDate = format(endOfToday(), 'MM/DD/YYYY');
@@ -128,12 +140,7 @@ module.exports = function() {
         if (!options.SKIP_ARCHIVE_DOWNLOAD) {
             const archivedDownloadDir = options.ARCHIVED_DOWNLOAD_DIR || datedArchivedDir + '/download';
             makeDir(archivedDownloadDir);
-            const copyAsync = promisify(copy);
-            try {
-                await copyAsync(downloadDir, archivedDownloadDir)
-            } catch (err) {
-                console.error('Copy failed: ' + err);
-            }
+            await recursiveCopy(downloadDir, archivedDownloadDir);
         }
     }
     

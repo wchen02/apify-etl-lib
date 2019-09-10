@@ -70,7 +70,7 @@ module.exports = function() {
         const copyAsync = promisify(copy);
         
         try {
-            await copyAsync(downloadDir, archivedDownloadDir)
+            await copyAsync(src, dest)
         } catch (err) {
             log.error(`Error recursively copying files from ${ src } to ${ dest }`);
             log.error(err);

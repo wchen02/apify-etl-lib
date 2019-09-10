@@ -1,3 +1,9 @@
+#### 0.4.3 (2019-09-10)
+
+##### Bug Fixes
+
+*  Fix copy pasted bug ([3687ffe8](https://github.com/wchen02/apify-etl-lib/commit/3687ffe898ab3eb324324c3628a58023b810b1c3))
+
 #### 0.4.2 (2019-08-31)
 
 ##### Other Changes
